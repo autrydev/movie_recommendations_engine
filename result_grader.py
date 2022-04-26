@@ -2,6 +2,8 @@ import csv
 import json
 import sys 
 
+from collections import defaultdict
+
 #Flag for turning on/off debug useful statements
 debug = True
 
@@ -14,8 +16,7 @@ json_input_file = sys.argv[1]
 movie_metadata_input_file = sys.argv[2]
 user_rating_input_file = sys.argv[3]
 
-from collections import defaultdict
-import csv
+
 
 rated_movies = set()
 rated_movies_dict = {}
