@@ -43,7 +43,7 @@ Creating Result Set From Raw Data
 --------------------------------------------------
 
 1) Preprocess to remove stopwords and slightly improve recommendation accuracy (Estimate: 40 minutes)
-python preprocess.py ready_to_use_result_set.json wiki_movie_plots_deduped.csv wiki_plots_cleaned.csv
+python preprocess.py wiki_movie_plots_deduped.csv wiki_plots_cleaned.csv
 
 2) Run main script to find top n similar plots for every plot (Estimate: 1 hour for n of 10, longer for larger sets)
 python calculate_similarities.py wiki_plots_cleaned.csv movie_similarity_sets.json 10
