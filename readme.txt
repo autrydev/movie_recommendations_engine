@@ -45,16 +45,16 @@ Creating Result Set From Raw Data
 1) Preprocess to remove stopwords and slightly improve recommendation accuracy (Estimate: 40 minutes)
 python preprocess.py wiki_movie_plots_deduped.csv wiki_plots_cleaned.csv
 
-2) Run main script to find top n similar plots for every plot (Estimate: 1 hour for n of 10, longer for larger sets)
+2) Run main script to find top n similar plots for every plot (Estimate: A few hours for n of 10)
 python calculate_similarities.py wiki_plots_cleaned.csv movie_similarity_sets.json 10
 
 3) (Optional) Run post processing script to remove matches with low similarity scores. Leads to fewer but more accurate recomendations. (Estimate: Several seconds)
 python post_process_similarity_filter.py movie_similarity_sets.json movie_similarity_90_sets.json 0.90
 
-4) (Optional) Test the quality of the results in terms of how many good matches vs bad matches it achieved based on IMDB user ratings
+4) (Optional) Test the quality of the results in terms of how many good matches vs bad matches it achieved based on IMDB user ratings (Estimate: Under an hour)
 python result_grader.py movie_similarity_90_sets.json movies_metadata.csv ratings.csv
 
-5) Run post processing to add reviewer count and scores to each recommendation. This was not needed for data mining but makes final results more meaningful
+5) Run post processing to add reviewer count and scores to each recommendation. This was not needed for data mining but makes final results more meaningful (Estimate: Under an hour)
 python post_process_add_movie_ratings.py movie_similarity_90_sets.json new_ready_to_use_results.json movies_metadata.csv ratings.csv
 
 6) You can now run the recomendation system with your freshly created result set
