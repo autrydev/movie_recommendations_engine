@@ -61,7 +61,7 @@ python post_process_add_movie_ratings.py movie_similarity_90_sets.json new_ready
 python recommendation_system_proof_of_concept.py new_ready_to_use_results.json
 
 Please note that our sample result set was based off of:
-1) 50 results per movie (to and ensure a good mix of popular and obscure movies)
+1) 50 results per movie (to help ensure a good mix of popular and obscure recomendations for every movie)
 2) no minimum similarity (lots of risky results preferable to a small number of good results)
 
 So the top 10 result with 90% simlarity filter you created in steps 1 through 5 will likely have slightly fewer recomendations than our sample.
